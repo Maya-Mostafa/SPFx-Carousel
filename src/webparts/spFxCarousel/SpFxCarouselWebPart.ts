@@ -21,7 +21,8 @@ export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCaro
     const element: React.ReactElement<ISpFxCarouselProps> = React.createElement(
       SpFxCarousel,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        context: this.context
       }
     );
 
