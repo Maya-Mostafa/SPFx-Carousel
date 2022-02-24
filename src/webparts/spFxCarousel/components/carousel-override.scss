@@ -1,0 +1,22 @@
+.carousel .thumbs{
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+}
+.carousel .thumb{
+    width: auto!important;
+}
+.carousel .thumb .slideBtn{
+    background: #eee;
+    padding: 5px 10px;
+    color: #fff;
+    display: block;
+    border-radius: 5px;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide{
+    opacity: 0.5;
+}
+.carousel .slider-wrapper.axis-horizontal .slider .slide.selected{
+    opacity: 1;
+}
