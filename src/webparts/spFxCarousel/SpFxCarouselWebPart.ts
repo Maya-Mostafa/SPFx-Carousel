@@ -13,6 +13,8 @@ import { ISpFxCarouselProps } from './components/ISpFxCarouselProps';
 
 export interface ISpFxCarouselWebPartProps {
   description: string;
+  listUrl: string;
+  listName: string;
 }
 
 export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCarouselWebPartProps> {
@@ -22,7 +24,9 @@ export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCaro
       SpFxCarousel,
       {
         description: this.properties.description,
-        context: this.context
+        context: this.context,
+        listUrl: this.properties.listUrl,
+        listName: this.properties.listName,
       }
     );
 
@@ -50,6 +54,14 @@ export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCaro
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('listUrl', {
+                  label: 'Site URL',
+                  value: this.properties.listUrl
+                }),
+                PropertyPaneTextField('listName', {
+                  label: 'List Name',
+                  value: this.properties.listName
                 })
               ]
             }
