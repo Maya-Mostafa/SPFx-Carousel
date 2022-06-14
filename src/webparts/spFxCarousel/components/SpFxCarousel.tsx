@@ -34,12 +34,12 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
 
   // View all items
   const viewAllHandler = () => {
-    window.open(`${props.listUrl}/${props.listName}/Forms/Allitems.aspx`, '_blank');
+    window.open(`${props.listUrl}/${props.listName}/Allitems.aspx`, '_blank');
   };
 
   // Add item
   const addItemHandler = () => {
-    setIFrame({url: `${props.listUrl}/_layouts/15/Upload.aspx?List=%7BE98AD0D0-2723-4EEB-BCA7-2D3AD9F7A042%7D&RootFolder=%2Fsites%2FMy-Site%2FSpotlight&ContentTypeId=0x0101009148F5A04DDD49CBA7127AADA5FB792B00AADE34325A8B49CDA8BB4DB53328F2140021BE7D7AC0C3BE4A8DEF89202A6B4A65&Source=https%3A%2F%2Fpdsb1.sharepoint.com%2Fsites%2FMy-Site%2FSpotlight%2Fforms%2Fallitems.aspx` , visible: true});
+    setIFrame({url: `${props.listUrl}/Lists/${props.listName}/NewForm.aspx` , visible: true});
   };
 
   // IFrame fncs
