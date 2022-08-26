@@ -17,7 +17,7 @@ export const getCarouselItems = async (context: WebPartContext, listName: string
                 id: item.ID,
                 thumbTitle: item.Title,
                 img: item.Img ? JSON.parse(item.Img).serverRelativeUrl : '',
-                link: item.link,
+                link: item.link ? item.link.Url : "",
                 btnColor: item.Colour.substring(item.Colour.indexOf('#')),
                 video: item.URL ? item.URL.Url : null,
                 videoType: item.URL ? (item.URL.Url.indexOf("youtube") !== -1 ? "youTube" : "other") : null,
