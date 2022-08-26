@@ -34,7 +34,7 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
 
   // View all items
   const viewAllHandler = () => {
-    window.open(`${props.listUrl}/${props.listName}/Allitems.aspx`, '_blank');
+    window.open(`${props.listUrl}/lists/${props.listName}/Allitems.aspx`, '_blank');
   };
 
   // Add item
@@ -109,17 +109,17 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
     return(
       <React.Fragment>
         {!item.video && 
-          <div><img src={item.img} /></div>
+          <a target="_blank" data-interception="off" className="slide-img" href={item.link}><img src={item.img} /></a>
         }
         {item.videoType === "other" && 
-          <div className="slide-video">
+          <a target="_blank" data-interception="off" href={item.link} className="slide-video">
             <video controls width="100%" height="100%">
               <source src={item.video} type="video/mp4"/>
             </video>
-          </div>
+          </a>
         }
         {item.videoType === "youTube" && 
-          <div className="slide-video"><YoutubeSlide key="youtube-1" url={item.video} /></div>
+          <a target="_blank" data-interception="off" href={item.link} className="slide-video"><YoutubeSlide key="youtube-1" url={item.video} /></a>
         }
       </React.Fragment>
     );
