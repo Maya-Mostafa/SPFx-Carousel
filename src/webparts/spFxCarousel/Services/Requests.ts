@@ -5,7 +5,7 @@ import { SPPermission } from "@microsoft/sp-page-context";
 export const getCarouselItems = async (context: WebPartContext, listName: string, listUrl: string) =>{
     const today = new Date();
     // const restUrl = `${listUrl}/_api/web/GetFolderByServerRelativeUrl('${listName}')/Files?$select=Id,Title,Button_x0020_Title,ServerRelativeUrl,Colour,Link,Default,Order,Start,End,ListItemAllFields&$expand=ListItemAllFields`;
-    const restUrl = `${listUrl}/_api/web/Lists/GetByTitle('${listName}')/items?$select=ID,Title,Img,link,Colour,URL,StartDate,End`;
+    const restUrl = `${listUrl}/_api/web/Lists/GetByTitle('${listName}')/items?$select=ID,Title,Img,link,Colour,URL,StartDate,End,Order&$orderby=Order`;
     const response = await context.spHttpClient.get(restUrl, SPHttpClient.configurations.v1).then(r => r.json());
 
     // const sortedResults = response.value.sort((a,b) => a.ListItemAllFields.Order - b.ListItemAllFields.Order);
