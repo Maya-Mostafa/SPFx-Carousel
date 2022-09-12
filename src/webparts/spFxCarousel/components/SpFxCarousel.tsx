@@ -143,7 +143,7 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
   		>
         {carouselItems && carouselItems.map(item => slide(item))}
   		</Carousel>
-      {isUserManage &&
+      {isUserManage(props.context) &&
         <IListControls
           toggleEditControls={toggleEditControls}
           viewAllHandler={viewAllHandler}
