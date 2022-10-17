@@ -18,7 +18,7 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
     getCarouselItems(props.context, props.listName, props.listUrl).then(r=> {setCarouselItems(r);});
   };
 
-  const [carouselItems, setCarouselItems] = React.useState([]);
+  const [carouselItems, setCarouselItems] = React.useState(['','']);
   const [editControlsVisible, setEditControlsVisible] = React.useState(false);
   const [iFrame, setIFrame] = React.useState({url: '', visible: false});
   const [dialogVisible, setDialogVisible] = React.useState(false);
@@ -128,21 +128,27 @@ export default function SpFxCarousel(props: ISpFxCarouselProps) {
 
 	return (
 		<div className={styles.spFxCarousel}>
-		  <Carousel
-        centerMode
-        centerSlidePercentage={70}
-        // infiniteLoop
-        emulateTouch
-        useKeyboardArrows
-        // interval={5000}
-        // autoPlay
-        // stopOnHover
-        showIndicators={false}
-        showStatus={false}
-        renderThumbs={() => customRenderThumb(carouselItems)}
-  		>
-        {carouselItems && carouselItems.map(item => slide(item))}
-  		</Carousel>
+		  <div className={`width${props.width} background${props.background}`}>
+		    <Carousel
+          // centerMode
+          // centerSlidePercentage={100}
+          infiniteLoop
+          emulateTouch
+          useKeyboardArrows
+          swipeable
+          transitionTime={500}
+          interval={3000}
+          autoPlay
+          stopOnHover
+          selectedItem={0}
+          showIndicators={false}
+          showStatus={false}
+          autoFocus={false}
+          renderThumbs={() => customRenderThumb(carouselItems)}
+    		>
+          {carouselItems && carouselItems.map(item => slide(item))}
+    		</Carousel>
+		  </div>
       {isUserManage(props.context) &&
         <IListControls
           toggleEditControls={toggleEditControls}
