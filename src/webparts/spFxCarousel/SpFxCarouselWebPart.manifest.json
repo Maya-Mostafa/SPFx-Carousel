@@ -25,7 +25,9 @@
     "properties": {
       "description": "SPFx Carousel",
       "listUrl": "https://pdsb1.sharepoint.com/sites/My-Site",
-      "listName": "Spotlight"
+      "listName": "Spotlight",
+      "Width": "Full",
+      "Background" : "Peel Blue"
     }
   }]
 }

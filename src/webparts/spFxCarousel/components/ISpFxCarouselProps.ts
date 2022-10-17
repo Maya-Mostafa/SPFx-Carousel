@@ -5,4 +5,6 @@ export interface ISpFxCarouselProps {
   context: WebPartContext;
   listUrl: string;
   listName: string;
+  width: string;
+  background: string;
 }

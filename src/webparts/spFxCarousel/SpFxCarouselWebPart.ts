@@ -3,7 +3,8 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneDropdown
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
@@ -15,6 +16,8 @@ export interface ISpFxCarouselWebPartProps {
   description: string;
   listUrl: string;
   listName: string;
+  width: string;
+  background: string;
 }
 
 export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCarouselWebPartProps> {
@@ -27,6 +30,8 @@ export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCaro
         context: this.context,
         listUrl: this.properties.listUrl,
         listName: this.properties.listName,
+        width: this.properties.width,
+        background: this.properties.background
       }
     );
 
@@ -62,6 +67,29 @@ export default class SpFxCarouselWebPart extends BaseClientSideWebPart<ISpFxCaro
                 PropertyPaneTextField('listName', {
                   label: 'List Name',
                   value: this.properties.listName
+                }),
+                PropertyPaneDropdown('width', {
+                  label: 'Width',
+                  selectedKey : 'Full',
+                  options: [
+                    {key: 'Full', text: 'Full'},
+                    {key: '95', text: '95%'},
+                    {key: '90', text: '90%'},
+                    {key: '85', text: '85%'},
+                    {key: '80', text: '80%'},
+                    {key: '75', text: '75%'},
+                    {key: '70', text: '70%'},
+                    {key: '65', text: '65%'},
+                    {key: '60', text: '60%'}
+                  ]
+                }),
+                PropertyPaneDropdown('background', {
+                  label: 'Background Color',
+                  selectedKey: 'White',
+                  options: [
+                    {key: 'White', text: 'White'},
+                    {key: 'PeelBlue', text: 'Peel Blue'},
+                  ]
                 })
               ]
             }

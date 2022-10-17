@@ -103,7 +103,51 @@ span.slideBtn:after{
     display: block;
 }
 
+// .carousel-root{
+//     background: #0099ff;
+// }
+// .carousel .slider-wrapper{
+//     width: 75%;
+// }
 
+// Different Carousel background colors
+.backgroundPeelBlue .carousel-root{
+    background: #0099ff;
+}
+.backgroundWhite .carousel-root{
+    background: #fff;
+}
+
+// Different Carousel Widths
+.width60 .carousel .slider-wrapper{
+    width: 60%;
+}
+.width65 .carousel .slider-wrapper{
+    width: 65%;
+}
+.width70 .carousel .slider-wrapper{
+    width: 70%;
+}
+.width75 .carousel .slider-wrapper{
+    width: 75%;
+}
+.width80 .carousel .slider-wrapper{
+    width: 80%;
+}
+.width85 .carousel .slider-wrapper{
+    width: 85%;
+}
+.width90 .carousel .slider-wrapper{
+    width: 90%;
+}
+.width95 .carousel .slider-wrapper{
+    width: 95%;
+}
+.widthFull .carousel .slider-wrapper{
+    width: 100%;
+}
+
+// Responsive
 @media screen and (max-width: 1875px){
     .slide-video {
         height: 470px;
@@ -165,6 +209,9 @@ span.slideBtn:after{
     }
 } 
 @media screen and (max-width: 825px){
+    .carousel .thumbs-wrapper{
+        margin: 0;
+    }
     .slide-video{
         height: 125px;
     }
